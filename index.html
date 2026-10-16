@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piano Virtual con IA - Visión por Computador</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- MediaPipe Hands CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="app-container">
+    <header class="header">
+      <h1>Piano Virtual con IA</h1>
+      <p class="subtitle">Control por Visión Artificial y Gestos de la Mano</p>
+    </header>
+
+    <div class="controls">
+      <button id="btn-start" class="btn btn-primary">Iniciar Cámara y Audio</button>
+      <div class="mode-selector">
+        <button id="btn-mode-free" class="btn btn-mode active">Modo Libre</button>
+        <button id="btn-mode-learn" class="btn btn-mode">Modo Aprendizaje (Jingle Bells)</button>
+      </div>
+    </div>
+
+    <div id="learning-panel" class="learning-panel hidden">
+      <div class="info-card">
+        <span>Siguiente Nota:</span>
+        <strong id="target-note-display">E4</strong>
+      </div>
+      <div class="info-card">
+        <span>Progreso:</span>
+        <strong id="song-progress">0 / 25</strong>
+      </div>
+      <div class="info-card">
+        <span>Canción:</span>
+        <strong>Jingle Bells (Coro)</strong>
+      </div>
+    </div>
+
+    <div class="viewport">
+      <video id="webcam" autoplay playsinline></video>
+      <canvas id="output-canvas"></canvas>
+      <div id="status-overlay" class="status-overlay">Presiona "Iniciar Cámara y Audio" para comenzar</div>
+    </div>
+
+    <div class="instructions">
+      <h3>Instrucciones de Uso:</h3>
+      <ul>
+        <li>Usa las puntas de tus dedos <strong>Índice</strong> o <strong>Medio</strong> para presionar las teclas.</li>
+        <li>En el <strong>Modo Aprendizaje</strong>, presiona la tecla iluminada en <span style="color: #2ecc71; font-weight: bold;">Verde</span> para avanzar en la canción.</li>
+        <li>Asegúrate de tener buena iluminación y colocar la mano frente a la cámara.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

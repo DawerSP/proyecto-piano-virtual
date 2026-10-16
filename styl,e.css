@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #121212;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header {
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2.2rem;
+  color: #00d2ff;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #a0a0a0;
+  font-size: 1rem;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  background: #1e1e1e;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #00d2ff, #0072ff);
+  color: white;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.mode-selector {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-mode {
+  background: #2a2a2a;
+  color: #ccc;
+}
+
+.btn-mode.active {
+  background: #3498db;
+  color: white;
+}
+
+.learning-panel {
+  display: flex;
+  justify-content: space-around;
+  background: #252830;
+  padding: 15px;
+  border-radius: 12px;
+  border-left: 5px solid #2ecc71;
+}
+
+.learning-panel.hidden {
+  display: none;
+}
+
+.info-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.info-card span {
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.info-card strong {
+  font-size: 1.4rem;
+  color: #2ecc71;
+}
+
+.viewport {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  background-color: #000;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+}
+
+#webcam {
+  display: none;
+}
+
+#output-canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.status-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px 30px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  text-align: center;
+  pointer-events: none;
+}
+
+.instructions {
+  background: #1e1e1e;
+  padding: 15px 20px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+.instructions h3 {
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.instructions ul {
+  list-style-position: inside;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
